@@ -1,0 +1,19 @@
+name: darby
+description: A private locker app to securely store your confidential files.
+publish_to: 'none'
+version: 1.0.0+1
+environment:
+sdk: ">=2.17.0 <3.0.0"
+dependencies:
+flutter:
+sdk: flutter
+path_provider: ^2.0.11
+encrypt: ^5.0.1
+flutter_secure_storage: ^8.0.0
+file_picker: ^5.0.1
+shared_preferences: ^2.0.15
+dev_dependencies:
+flutter_test:
+sdk: flutter
+flutter:
+uses-material-design: true
