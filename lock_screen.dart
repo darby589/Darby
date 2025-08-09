@@ -42,3 +42,48 @@ child: const Text('OK'))
 ],
 ));
 }
+}
+_pinController.clear();
+}
+@override
+Widget build(BuildContext context) {
+return Scaffold(
+appBar: AppBar(
+title: const Text('Darby Lock'),
+),
+body: Padding(
+padding: const EdgeInsets.all(32.0),
+child: Column(
+mainAxisAlignment: MainAxisAlignment.center,
+children: [
+const Text('Enter your 5-digit PIN',
+style: TextStyle(fontSize: 22)),
+const SizedBox(height: 20),
+TextField(
+controller: _pinController,
+maxLength: 5,
+keyboardType: TextInputType.number,
+obscureText: true,
+decoration: const InputDecoration(
+border: OutlineInputBorder(),
+counterText: '',
+hintText: 'PIN',
+),
+onSubmitted: (_) => _checkPin(),
+),
+if (_error.isNotEmpty)
+Padding(
+padding: const EdgeInsets.only(top: 12.0),
+child: Text(_error, style: const TextStyle(color: Colors.red)),
+),
+const SizedBox(height: 30),
+ElevatedButton(
+onPressed: _checkPin,
+child: const Text('Unlock'),
+),
+],
+),
+),
+);
+}
+}
